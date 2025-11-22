@@ -1,0 +1,4 @@
+nmap -sS -T0 --scan-delay 1s -f -D RND:10 --source-port 53 <target>
+
+-D RND:10 --> These decoys send packets simultaneously with your real IP. To the target, all 11 sources (10 random IPs + your real IP) appear to be scanning it.
+--source-port 53 --> Forces the scan packets to use source port 53. This can bypass poorly configured firewalls that trust DNS traffic, but it does not provide real stealth against modern IDS/IPS.
